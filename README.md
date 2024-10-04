@@ -1,2 +1,124 @@
 # Digital_Voting_machine
 c++ code on digital voting machine
+#include<iostream>
+#include<cstring>
+using namespace std;
+int member1;
+int member2;
+int member3;
+long total;
+class election{
+   public:
+    election(int x){
+        switch(x){
+            case 1:
+            member1++;
+            cout<<"Thanks for voting member 1"<<endl;
+            break;
+            case 2:
+            member2++;
+            cout<<"Thanks for voting member 2"<<endl;
+            break;
+            case 3:
+            member3++;
+            cout<<"Thanks for voting member 3"<<endl;
+            break;
+            default:
+            cout<<"No candiate exist in that serial number"<<endl;
+            break;
+        }
+    }
+     };
+        void display1(){
+            cout<<"The total vote member 1 obtained is :"<<member1<<endl;
+        }
+        void display2(){
+            cout<<"The total vote member 2 obtained is :"<<member2<<endl;
+        }
+        void display3(){
+            cout<<"The total vote member 3 obtained is :"<<member3<<endl;
+        }
+        int totalvote(){
+            total=member1+member2+member3;
+            cout<<"The total votes are : "<<total<<endl;
+            return total;
+            
+        }
+       
+
+
+int main()
+{
+    int i=0;
+      cout<<endl;
+    cout<<"----WELCOME----"<<endl;
+  cout<<endl;
+    int m;
+    cout<<"Please ensure how many citizens are voting :";
+    cin>>m;
+    cout<<endl;
+   
+    cout<<"Enter 1-> member 1 \nEnter 2-> member 2\nEnter 3-> member 3 "<<endl;
+    cout<<endl;
+   
+    while(i<m){
+        int x;
+        cout<<"------please caste your vote-----"<<endl;
+        cin>>x;
+        election e(x);
+        i++;
+
+    }
+    cout<<endl;
+    cout<<"------THE VOTE COUNT PORTAL------"<<endl;
+    cout<<endl;
+    string pass;
+    cout<<"please ensure your from election commity :";
+    cin>>pass;
+    if(pass=="170405"){
+        cout<<endl;
+    cout<<"------The individual vote counts are------"<<endl;
+    cout<<endl;
+    display1();
+    display2();
+    display3();
+    cout<<endl;
+    totalvote();
+    
+     cout<<endl;
+    cout<<"--------THE ANNOCUNCMENT OF WINNER----------"<<endl;
+    cout<<endl;
+    if(member1>member2&&member1>member3){
+        cout<<"The winner is Member 1"<<endl;
+        cout<<endl;
+    }
+    else if(member2>member1&&member2>member3){
+         cout<<"The winner is Member 2"<<endl;
+cout<<endl;
+    }
+    else if(member1==member2){
+        cout<<"Tied between member 1  and member 2"<<endl;
+          cout<<endl;
+    }
+    else if(member1==member3){
+        cout<<"Tied between member 1  and member 3"<<endl;
+cout<<endl;
+    }
+    else if(member2==member3){
+        cout<<"Tied between member 2  and member 3"<<endl;
+cout<<endl;
+    }
+    else{
+        cout<<"The winner is Member 3"<<endl;
+
+cout<<endl;
+    }
+    }
+    else{
+        cout<<endl;
+        cout<<"You have no right to access the information of voting"<<endl;
+        cout<<endl;
+    }
+   
+   return 0;
+}
